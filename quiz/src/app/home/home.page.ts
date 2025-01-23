@@ -27,6 +27,9 @@ export class HomePage {
       this.encargado.setValue('');
       this.numero.setValue('');
     }
+    else {
+      alert('Llene todos los campos');
+    }
   }
   constructor() { }
 
