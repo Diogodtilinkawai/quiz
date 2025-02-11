@@ -18,7 +18,7 @@ export class HomePage {
 
 
   items: any = [];
-  chistes: any;
+  quotes: any;
   agregar() {
     if (this.nombre.value && this.ano.value && this.productora.value && this.casa.value && this.prota.value ) {
       this.items.push({ nombre: this.nombre.value, fecha1: this.ano.value, fecha2: this.productora.value, casa: this.casa.value, prota: this.prota.value});
@@ -38,10 +38,10 @@ export class HomePage {
     this.router.navigate(['/formulario'])
   }
   constructor(private router:Router, private examenservice:ExamenService) { }
-  // ngOnInit() {
-  //   this.examenservice.chistes().subscribe((data) => {
-  //     this.chistes = data;
-  //     console.log(this.chistes);
-  //   });
-  // }
+  ngOnInit() {
+    this.examenservice.quotes().subscribe((data) => {
+      this.quotes = data;
+      console.log(this.quotes);
+    });
+  }
 }
