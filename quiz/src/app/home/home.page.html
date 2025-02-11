@@ -8,30 +8,31 @@
 
 <ion-content [fullscreen]="true">
   <ion-item>
-    <ion-label>Nombre del evento</ion-label>
+    <ion-label>Nombre de pelicula</ion-label>
     <ion-input [formControl]="nombre" required></ion-input>
   </ion-item>
   <ion-item>
-    <ion-label>Fecha de inicio</ion-label>
-    <ion-input type="date" [formControl]="fechainicio"></ion-input>
+    <ion-label>Año de lanzamiento</ion-label>
+    <ion-input  [formControl]="ano"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-label>Fecha final</ion-label>
-    <ion-input type="date" [formControl]="fechafin"></ion-input>
+    <ion-label>Nombre de la productora</ion-label>
+    <ion-input  [formControl]="productora"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-label>Ubicacion</ion-label>
-    <ion-input [formControl]="ubicacion"></ion-input>
+    <ion-label>Casa productora</ion-label>
+    <ion-input [formControl]="casa"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-label>Nombre del encargado</ion-label>
-    <ion-input [formControl]="encargado"></ion-input>
+    <ion-label>Portagonista</ion-label>
+    <ion-input [formControl]="prota"></ion-input>
   </ion-item>
-  <ion-item>
-    <ion-label>Numero del encargado </ion-label>
-    <ion-input [formControl]="numero" type="number"></ion-input>
-  </ion-item>
+
   <ion-button (click)="agregar()">Agregar</ion-button>
+  <ion-button (click)="redirect()">ir a formulario</ion-button>
+  <ion-item *ngIf="chistes">
+    <h2>{{chistes.value}}</h2>
+  </ion-item>
   <table>
     <tr *ngFor="let item of items;let indice=index">
       <td> {{indice+1}}</td>
@@ -39,12 +40,12 @@
       <td>{{item.fecha1}}</td>
       <td>{{item.fecha2}}</td>
       <td>{{item.ubicacion}}</td>
-      <td>{{item.encargado}}</td>
+      <td>{{item.prota}}</td>
       <td>{{item.numero}}</td>
-      <td>
+      <!-- <td>
         <ion-label>Completado</ion-label>
         <ion-checkbox></ion-checkbox>
-      </td>
+      </td> -->
     </tr>
   </table>
 </ion-content>
