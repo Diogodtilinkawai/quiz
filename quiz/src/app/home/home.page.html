@@ -33,6 +33,9 @@
   <ion-item *ngIf="quotes">
     <h2>{{quotes.quote}}</h2>
   </ion-item>
+  <ion-item>
+    <h3>{{quotes.author}}</h3>
+  </ion-item>
   <table>
     <tr *ngFor="let item of items;let indice=index">
       <td> {{indice+1}}</td>
