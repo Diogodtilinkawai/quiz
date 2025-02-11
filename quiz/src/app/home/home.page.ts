@@ -33,11 +33,11 @@ export class HomePage {
       alert('Llene todos los campos');
     }
   }
+  constructor(private router:Router, private examenservice:ExamenService) { }
   redirect()
   {
     this.router.navigate(['/formulario'])
   }
-  constructor(private router:Router, private examenservice:ExamenService) { }
   ngOnInit() {
     this.examenservice.quotes().subscribe((data) => {
       this.quotes = data;
